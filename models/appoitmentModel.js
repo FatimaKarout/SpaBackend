@@ -2,9 +2,9 @@ const mongoose = require('mongoose')
 const { Schema, model } = mongoose
 const Appoitment = new Schema({
   dateTime: { type: Date, required: true },
-  service: {
+  serviceId: {
     type: Schema.Types.ObjectId,
-    ref: 'Service',
+    ref: 'service',
     required: true
   },
   status: {
@@ -12,9 +12,9 @@ const Appoitment = new Schema({
     enum: ['pending', 'confirmed', 'cancelled'],
     default: 'pending'
   },
-  user: {
+  userId: {
     type: Schema.Types.ObjectId,
-    ref: 'User',
+    ref: 'user',
     required: true
   },
 
